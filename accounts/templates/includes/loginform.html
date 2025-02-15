@@ -1,0 +1,16 @@
+<form class='login-form reg-form' method='post' action=''>
+  {% csrf_token %}
+  <div class="errors">
+    {{loginform.non_field_errors}}
+  </div>
+  {% for field in loginform %}
+    <div class='field-box'>
+      {{field.label_tag}}
+      {{field}}
+      {{field.errors}}
+    </div>
+  {% endfor %}
+  <button class='btn main-btn' type="submit">
+    Login
+  </button>
+</form>

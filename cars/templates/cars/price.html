@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+Carculator-Predicted Price
+{% endblock page_title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/cars/css/price.css' %}">
+<link rel="stylesheet" href="{% static '/cars/css/history.css' %}">
+{% endblock css %}
+
+{% block page_body_main %}
+{% include "includes/pricedata.html" %}
+{% endblock page_body_main %}
+
+{% block page_body_side %}
+{% include "includes/historydata.html" %}
+{% endblock page_body_side %}

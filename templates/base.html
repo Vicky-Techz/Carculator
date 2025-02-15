@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/icon-small.png' %}">
+  <link rel="stylesheet" href="{% static "css/base.css" %}">
+
+  {% block css %}{% endblock css %}
+
+  <title>{% block page_title %}{% endblock page_title %}</title>
+</head>
+
+<body class="body-container">
+  <nav>
+  <div class="nav-container">
+    <div class="logo-container">
+      <a class="logo-box" href="{% url "home" %}">
+        <img src="{% static "images/icon-small.png" %}" alt="website logo">
+        <h2>Carculator</h2>
+      </a>  
+    </div>
+    <div class="menu-box">
+      {% comment %} <a class="btn nav-btn" href="{% url 'register'%}">Register</a> {% endcomment %}
+      {% comment %} <a class="btn nav-btn" href="{% url 'logout'%}">Logout</a> {% endcomment %}
+      <div class="btn-box">
+        {% if user.is_authenticated %}
+          <a class="btn nav-btn" href="{% url 'logout'%}">Logout</a>
+        {% else %}
+          <a class="btn nav-btn" href="{% url "login" %}">Login</a>
+          <a class="btn nav-btn" href="{% url "register" %}">Register</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <div class="body-container-main">
+    {% block page_body_main %}
+    {% endblock page_body_main %}
+  </div>
+  
+  {% if user.is_authenticated %}
+    <div class="body-container-side">   
+      <a class="btn side-btn recent-btn" href="">Recent Searches</a>
+        <div class="body-container-side-data">
+          {% block page_body_side %}
+          {% endblock page_body_side %}
+        </div>
+    </div>
+  {% endif %}
+</body>
+
+<footer>
+<p>&copy; 2025 Carculator. All Rights Reserved.</p>
+</footer>
+
+</html>

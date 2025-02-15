@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+Carculator-Homepage
+{% endblock page_title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/cars/css/index.css' %}">
+<link rel="stylesheet" href="{% static '/cars/css/history.css' %}">
+{% endblock css %}
+
+{% block page_body_main %}
+{% include "includes/indexform.html" %}
+{% endblock page_body_main %}
+
+{% block page_body_side %}
+{% if user.is_authenticated %}
+{% include "includes/historydata.html" %}
+{% else %}
+{% include "includes/loginform.html" %}
+{% endif %}
+{% endblock page_body_side %}

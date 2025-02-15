@@ -1,0 +1,22 @@
+  <div class='price-box'>
+    <h2>Estimated Car Price</h2>
+    <h3><span class="dollar">$</span>{{indexform}}</h3>
+    <h5 class="inline-text">
+      {% if submitted_data.model == '001' %}
+        <span class="font-normal">Lounge</span>
+      {% elif submitted_data.model == '010' %}
+        <span>Pop</span>
+      {% elif submitted_data.model == '100' %}
+        <span>Sport</span>
+      {% endif %}
+        <span> &ThickSpace;|&ThickSpace; </span>
+        <span>{{submitted_data.kilometers}}Km</span>
+        <span> &ThickSpace;|&ThickSpace; </span>
+        <span>{{submitted_data.age_in_days}}days</span>
+        <span> &ThickSpace;|&ThickSpace; </span>
+        <span>Owners:{{submitted_data.previous_owners}}</span>
+        <span> &ThickSpace;|&ThickSpace; </span>
+        <span>Power:{{submitted_data.engine_power}}</span>
+    </h5>
+    <p>Note &colon; These are indicative prices and depend on the condition of the car. Excellent condition cars may cost more and cars not in good condition may cost less.</p>
+  </div>

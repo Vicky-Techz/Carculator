@@ -1,0 +1,14 @@
+<form class="reg-form" action="" method="post">
+  <div class='errors'>
+  {{regform.non_field_errors}}
+  </div>
+  {% csrf_token %}
+  {% for field in regform %}
+    <div class="field-box">
+      {{field.label_tag}}
+      {{field}}
+      {{field.errors}}
+    </div> 
+  {% endfor %}
+<button class="btn main-btn" type="submit">Register</button>
+</form>
