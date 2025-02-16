@@ -1,0 +1,32 @@
+.price-box{
+  width: 100%;
+  height: auto;
+  padding: 3.6rem;
+  margin: auto;
+  background-color: #10B981;
+  color: white;
+  font-weight: 600;
+  font-size: large;
+  text-align: center;
+}
+
+.price-box .dollar{
+  font-size: 4.8rem;
+}
+
+.inline-text .font-normal{
+  font-size: 1.2rem;
+}
+
+.price-box h3{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 7.2rem;
+}
+
+.price-box p{
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-style: italic;
+}
